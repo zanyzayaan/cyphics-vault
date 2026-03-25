@@ -1,0 +1,212 @@
+/* GLOBAL & THEME */
+body {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace; 
+    background: #050505; 
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Global Cursor */
+html, body {
+    cursor: crosshair; 
+}
+
+/* Interactive Elements Cursor */
+button, select, .button, .magic-btn, .copy-btn {
+    cursor: pointer !important;
+}
+
+textarea, input {
+    cursor: text;
+}
+
+.logo, h1, h2, h3 {
+    font-family: "Asimovian", sans-serif;
+}
+
+.logo {
+    letter-spacing: 4px;
+    color: #00ff41;
+    text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+}
+
+.badge {
+    background: rgba(0, 255, 65, 0.1);
+    color: #00ff41;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.hidden { display: none; }
+
+.html { cursor: none; } 
+
+.cursor-dot,
+.cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: transform 0.1s ease-out, opacity 0.3s ease-in-out;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00ff41;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #00ff41;
+    transition: all 0.15s ease-out;
+}
+
+/* LAYOUT & CARDS */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 { font-size: 48px; margin: 0 0 10px 0; }
+header p { color: #888; margin: 0; }
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card {
+    background: rgba(15, 15, 15, 0.8);
+    border: 1px solid rgba(0, 255, 65, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 24px;
+    width: 440px;
+    max-width: 95%;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-card p, .info-card li {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* FORM ELEMENTS */
+textarea, select, input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border-radius: 6px;
+    background: #111;
+    border: 1px solid #222;
+    color: #c8ffe0;
+    font-family: "JetBrains Mono", monospace;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+textarea { height: 130px; resize: none; }
+
+textarea:focus, select:focus, input:focus {
+    outline: none;
+    border-color: #00ff41;
+    background: #151515;
+}
+
+#outputText {
+    background: rgba(0, 255, 65, 0.03);
+    color: #00ff41;
+    border: 1px dashed rgba(0, 255, 65, 0.3);
+    font-weight: bold;
+}
+
+/* 
+   4. BUTTONS (styling from UIverse) */
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.button_lg {
+    display: block;
+    padding: 12px 24px;
+    color: #00ff41;
+    background: #000;
+    border: 1px solid #00ff41;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.button:hover .button_lg {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+.decrypt-btn .button_lg {
+    color: #ff4655;
+    border-color: #ff4655;
+}
+
+.decrypt-btn:hover .button_lg {
+    background: #ff4655;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+}
+
+.copy-btn {
+    background: #111;
+    border: 1px solid #333;
+    color: #888;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 11px;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.copy-btn:hover {
+    border-color: #00ff41;
+    color: #00ff41;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .main { flex-direction: column; align-items: center; }
+}

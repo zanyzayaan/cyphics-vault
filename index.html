@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CYPHICS</title>
+    <link rel="stylesheet" href="styles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asimovian&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="cursor-outline"></div>
+<div class="cursor-dot"></div>
+
+<div class="app-content">
+<header>
+    <h1 class="logo">🔐 VAULT</h1>
+    <p>Classical Cryptography Suite</p>
+</header>
+
+<div class="main">
+    <div class="card input-card">
+        <div class="card-header">
+            <h2>Enter Message</h2>
+            <div class="buttons">
+            <button class="button" onclick="autoDetectAndDecrypt()"><span class="button_lg"><span class="button_text"> Auto-Detect</span></span></button>
+        </div></div>
+
+        <textarea id="inputText" placeholder="Paste encrypted text here..."></textarea>
+        
+        <div id="detection-badge" class="badge hidden">Detected: <span id="detected-type">-</span></div>
+
+        <label>Cipher Type</label>
+        <select id="cipherType">
+            <option value="caesar">Caesar Cipher</option>
+            <option value="atbash">Atbash Cipher</option>
+            <option value="rot13">ROT13</option>
+            <option value="vigenere">Vigenère Cipher</option>
+            <option value="base64">Base64 Encoding</option>
+            <option value="beaufort">Beaufort Cipher</option>
+            <option value="railfence">Rail Fence Cipher</option>
+            <option value="baconian">Baconian Cipher</option>
+        </select>
+
+        <label>Key / Shift</label>
+        <input type="text" id="key" placeholder="Example: 3 or SECRET">
+
+        <div class="buttons">
+            <button class="button" onclick="encrypt()"><span class="button_lg"><span class="button_text">Encrypt</span></span></button>
+            <button class="button decrypt-btn" onclick="decrypt()"><span class="button_lg"><span class="button_text">Decrypt</span></span></button>
+        </div>
+    </div> 
+
+    <div class="card info-card">
+        <h2>📘 Quick Guide</h2>
+        <div class="guide-grid">
+            <p>Pre-requisite: basic knowledge about the ciphers so that the input is accurate</p>
+            <p><strong>Input numbers in the key/shift for:</strong> Caesar, Rail Fence</p>
+            <p><strong>Input words in the key/shift for:</strong> Vigenère, Beaufort</p>
+        </div>
+        <hr class="divider">
+        <h3>Output</h3>
+        <div class="result-container">
+            <textarea id="outputText" readonly placeholder="Result..."></textarea>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</div>
+</body>
+</html>
